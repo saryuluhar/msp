@@ -1,0 +1,9 @@
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain>localhost</domain>
+        <domain>http://43.241.63.17</domain>
+        <domain>43.241.63.17</domain>
+        <domain>http://43.241.63.17</domain>
+        <domain>43.241.63.17</domain>
+    </domain-config>
+</network-security-config>

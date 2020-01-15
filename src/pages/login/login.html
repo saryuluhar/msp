@@ -1,0 +1,83 @@
+
+<ion-content padding>
+  <ion-header>
+    <ion-navbar background-color="#057989" hideBackButton="false" scroll="false">
+      <ion-buttons left>
+        <img height="35" src="assets/imgs/police_logo.png" />
+      </ion-buttons>
+      <ion-title >
+        <label text-center style="font-size: 16px; font-family: arial; text-align: center;font-weight: bold"> Maharashtra State Police  Housing Corporation </label>
+      </ion-title>
+      <ion-buttons right>
+        <img height="35" src="assets/imgs/mrsac_logo.png" />
+      </ion-buttons>
+  </ion-navbar >
+    </ion-header>
+          <ion-card-header >
+   
+    <!-- <img src="assets/imgs/mrsac_logo.png" /> -->
+
+    
+      <div class="or-label" text-center  style="margin-top: 40px"  >
+          <img alt="Logo" height="235" width="235"  src="assets/imgs/policelogo.png" >
+      </div>
+  
+  </ion-card-header>
+  <form [formGroup]="authForm" >
+    <ion-item>
+      <ion-label floating>Mobile no</ion-label>
+      <ion-input type="tel" value="" style="color: #000" [formControl]="authForm.controls['username']" [ngClass]="{'error-border':!authForm.controls['username'].valid}" [(ngModel)]="data.username" maxlength="10"></ion-input>
+      <!-- <ion-icon name="person" item-right ></ion-icon> -->
+    </ion-item><br />
+    <div class="error-box" *ngIf="authForm.controls['username'].hasError('required') && authForm.controls['username'].touched">* Username is required!</div>
+    <div class="error-box" *ngIf="authForm.controls['username'].hasError('minlength') && authForm.controls['username'].touched">* Minimum username length is 5!</div>
+    <div class="error-box" *ngIf="authForm.controls['username'].hasError('maxlength') && authForm.controls['username'].touched">* Maximum username length is 10!</div>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input [formControl]="authForm.controls['password']" value="" [type]="passwordType" clearOnEdit="false" [(ngModel)]="data.password"></ion-input>  
+      
+      <!-- <ion-input  type="password" [formControl]="authForm.controls['password']" [(ngModel)]="data.password"></ion-input> -->
+      <!-- <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+ <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button> -->
+ <!-- <ion-icon item-end [name]="passwordIcon" class="passIcon" (click)='hideShowPassword()'></ion-icon> -->
+    
+</ion-item><br />
+    <div class="error-box" *ngIf="authForm.controls['password'].hasError('required') && authForm.controls['password'].touched">* Password is required!</div>
+    <div class="error-box" *ngIf="authForm.controls['password'].hasError('minlength') && authForm.controls['password'].touched">* Minimum username length is 5!</div>
+    <div class="error-box" *ngIf="authForm.controls['password'].hasError('checkFirstCharacterValidatorOutput') && authForm.controls['password'].touched">* Password cant't start with number!</div><br />
+    
+
+    <button type="submit"  ion-button full  [disabled]="!authForm.valid"style="text-transform: none;background: #057989"(click)="login()">Sign In</button>
+
+    <div class="or-label" text-center margin-top=20px>
+      Don't have an Account ?
+    </div>
+    
+    <div class="wrapper" margin-top=20px>
+      <!-- <button  color="secondary" ion-button    (click)="presentActionSheet()"> -->
+        <button ion-button round ion-center style="background: #057989 ;text-transform: none"(click)="register()">Register Here</button>
+
+        <button ion-button round ion-center style="background: #057989 ;text-transform: none"(click)="resetpassword()">Forgot password</button>
+   </div>
+
+  </form>
+<!-- 
+  <button type="register" ion-button full style="background: #00acf7" >Register Here</button> -->
+  <!-- style="text-align:center;font-size:10px;font-weight:bold;margin-bottom:5%;margin-top: 10px"  -->
+  <div  style="margin-top: 50px">
+  <div     style="text-align:center;font-size:10px;font-weight:bold"   >
+      <img  height="50" src="assets/imgs/mrsac_logo.png"/>
+     </div>
+     <div   class = "item item-text-wrap" style="text-align:center;font-size:10px;font-weight:bold;margin-top:5px;color:rgb(112, 111, 111);margin-top: 10px;">
+        &copy; Design and Developed by
+     </div>
+     <div   class = "item item-text-wrap" style="text-align:center;font-size:10px;font-weight:bold;margin-top:5px;color:rgb(112, 111, 111) ;margin-top: 10px;">
+      Maharashtra Remote Sensing Application Centre, Nagpur
+     </div>
+    
+    </div>
+  
+</ion-content>
+
+
+

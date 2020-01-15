@@ -1,0 +1,32 @@
+
+
+ <ion-header>
+  <ion-navbar background-color="#057989" hideBackButton="true" >
+    <ion-buttons left>
+      <img height="35" src="assets/imgs/police_logo.png" />
+    </ion-buttons>
+    <ion-title style="text-align: center">
+      <label text-center style="font-size: 16px; font-family: arial; text-align: center;font-weight: bold"> Maharashtra State Police  Housing Corporation </label>
+    </ion-title>
+    <ion-buttons right>
+      <img height="35" src="assets/imgs/mrsac_logo.png" />
+    </ion-buttons>
+
+  </ion-navbar >
+  <hr/>
+  <div  style="text-align: center;color: white ; height: 33px;margin-top: 8px">
+          
+  <label    style="font-size: 14px; font-family: arial; text-align:center ;font-weight: bold;"> Send Manager </label>
+  </div>
+</ion-header>
+
+
+<ion-tabs  tabsPlacement="top" selectedIndex="0"   style="margin-top: 50px" >
+      <ion-tab [root]="tab1Root" tabTitle="Unsent" ></ion-tab>
+      <ion-tab [root]="tab2Root" tabTitle="Sent" ></ion-tab>
+     
+    </ion-tabs>  
+
+
+
+    

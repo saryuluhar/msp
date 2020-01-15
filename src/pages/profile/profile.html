@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar background-color="#057989" hideBackButton="true" scroll="false">
+    <ion-buttons left>
+      <img height="35" src="assets/imgs/police_logo.png" />
+    </ion-buttons>
+    <ion-title >
+      <label text-center style="font-size: 16px; font-family: arial; text-align: center;font-weight: bold"> Maharashtra State Police  Housing Corporation </label>
+    </ion-title>
+    <ion-buttons right>
+      <img height="35" src="assets/imgs/mrsac_logo.png" />
+    </ion-buttons>
+</ion-navbar >
+  </ion-header>
+
+
+
+<ion-content >
+    <ion-card style="border:solid 1px #057989">
+        <ion-card-header color="white" style="padding:4px;color:white;text-align:left;margin: 5px" >Profile Details</ion-card-header>
+        <ion-card-content margin-top=20px>
+          <div class="modal" ion-item text-wrap *ngFor="let item of user_data" style="background: #eee;border: 1px solid #888">
+
+              <div class="item item-text-wrap" style="font-size:100%; margin-bottom:5px;padding: 2%">
+                  <strong> Officer name       : </strong>  {{ item.official_name }}
+               </div>
+
+               <div class="item item-text-wrap"  style="font-size:100%; margin-bottom:5px;padding: 2%">
+                  <strong>Project Management Consultant : </strong>   {{ item.pmc }}
+               </div>
+      
+               <div class="item item-text-wrap"  style="font-size:100%; margin-bottom:5px;padding: 2%" >
+                  <strong>Contractor Name      : </strong>   {{ item.contractor }}
+               </div>
+
+               <div class="item item-text-wrap"  style="font-size:100%; margin-bottom:5px;padding: 2%">
+                  <strong> Region      : </strong>  {{ item.resion }}
+               </div>
+            
+            <div class="item item-text-wrap"  style="font-size:100%; margin-bottom:5px;padding: 2%" >
+                <strong> Mobile  No    : </strong>  {{ item.mob_no }}
+             </div>
+
+             <div class="item item-text-wrap"  style="font-size:100%; margin-bottom:5px;padding: 2%">
+                <strong>Email         : </strong>   {{ item.email }}
+             </div>
+    
+            
+    
+           </div>
+            </ion-card-content>
+            
+            <div class="wrapper" >
+                <button ion-button   ion-center    style="background: #057989 ;text-transform: none" (click)="back()">Back</button>
+             </div>
+    </ion-card>
+
+   
+</ion-content>

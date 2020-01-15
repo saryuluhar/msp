@@ -1,0 +1,7 @@
+{
+  "name": "msphcmappingapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

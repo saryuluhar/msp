@@ -1,0 +1,135 @@
+
+#home {
+    height: 100%;
+    }
+.fab {
+   width: 10%;
+  border-radius: 20px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 130px;
+  background: #057989;
+  height: 100px;
+}
+.fab:hover {
+    background: #73AD21;
+}
+
+.changeToastsuccess{.toast-wrapper 
+    {opacity: 1.0;  margin-bottom: 20px; border-radius: 50px !important; text-align: center; background: color($colors, secondary);}}
+
+    .changeToastfaillure{.toast-wrapper 
+        {opacity: 1.0;  margin-bottom: 20px; border-radius: 50px !important; text-align: center; background: color($colors, danger);}}
+.yourCssClassName {
+    text-align:center;
+    color: #057989;
+   }
+
+.backgrounds {
+    background-image: url('img/background.jpg');  ; 
+    
+}
+
+.toastcss {
+    text-align:center;
+    background-color:#32db64!important;
+   }
+
+
+// ion-content{
+//     background-image: url('../../assets/imgs/police.jpg');
+// }
+.fab img {
+    display: block;
+    width: 76%;
+    padding: 12%;
+    height: auto;
+}
+.cached-home {
+    background-image: url('../../assets/imgs/newmaha.png');
+   // background-repeat:no-repeat;
+    background-size:100%;
+   
+   
+    width:100%;
+    }
+
+    .backgound-image {
+        background-image: url('../../assets/imgs/newmaha.png');
+        width: 100%;
+        background-size: 100% ;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+
+.row{
+    margin-left: 10px;
+   // margin: (10,10,10,10)
+}
+
+.wrapper {
+    text-align: center;
+    // background-color 
+    // : #057989;
+}
+
+.home {
+ 
+    scroll-content {
+        display: flex;
+        flex-direction: column;
+    }
+ 
+    ion-grid {
+        padding: 0;
+        height: 100%;
+    }
+ 
+    ion-row {
+        flex: 1;
+      
+        margin-left: 50 ;
+        margin-right: 50;
+       
+    }
+ 
+}
+
+.toolbar-background {
+    background-color: #057989;
+    
+  }
+  .toolbar-title {
+    color: white;
+    text-align: left
+  }
+  .item-toggle ion-label {
+    color: #17cc72;
+  }
+  .title-image {
+    margin-top: 8px;
+  
+}
+
+
+  
+  .toolbar-title, {
+    color: white;
+    text-align: center;
+  }
+
+  ion-title{
+    text-align: left;
+   }
+
+// @font-face {
+//     font-family: GlobalFont;
+//     src: url("../assets/fonts/Quicksand-Regular.ttf");
+//     }
+    
+//     body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title,ion-col,label {
+//     font-family: 'GlobalFont' !important;
+//     }
+  
+  

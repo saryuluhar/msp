@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-navbar background-color="#057989" hideBackButton="true" scroll="false">
+    <ion-buttons left>
+      <img height="35" src="assets/imgs/police_logo.png" />
+    </ion-buttons>
+    <ion-title style="text-align: center">
+      <label text-center style="font-size: 16px; font-family: arial; text-align: center;font-weight: bold"> Maharashtra State Police  Housing Corporation </label>
+    </ion-title>
+    <ion-buttons right>
+      <img height="35" src="assets/imgs/mrsac_logo.png" />
+    </ion-buttons>
+
+  </ion-navbar >
+  <ion-navbar  hideBackButton="true" scroll="false" style="margin-top: 0.5px  ;text-align:left" class="toolbar-title">
+     
+      <ion-title style="text-align:left" class="ion-title">
+        <label  style="font-size: 14px; font-family: arial; text-align:left;font-weight: bold">Dashboard </label>
+      </ion-title>
+     
+  
+    </ion-navbar>
+</ion-header>
+<ion-content style="background-image: assets/imgs/place" >
+
+    <!-- <img src="assets/imgs/example.jpg"> -->
+  <ion-grid text-center style="margin-top: 60px" >
+
+
+
+    <ion-row wrap>
+      <ion-col width-50 (click)="gotomaps()">
+        
+        <img src="assets/imgs/place.png" height="70" width="70" />
+      </ion-col>
+      <ion-col width-50 (click)="gotosendmanager()">
+        <img src="assets/imgs/sendm.png" height="70" width="70" />
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row wrap>
+      <ion-col width-50>
+        <label style="font-size: 13px; font-family: arial; font-weight: bold;color:#033941"> Mapping</label>
+      </ion-col>
+
+      <ion-col width-50>
+        <label style="font-size: 13px; font-family: arial; font-weight: bold;color:#033941"> Send Manager </label>
+      </ion-col>
+
+    </ion-row>
+
+    <!-- <ion-row style="margin-top: 40px">
+      <ion-col width-100 center (click)="profile()">
+        <img src="assets/imgs/male.png" height="60" width="60" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-100 center>
+        <label style="font-size: 13px; font-family: arial;font-weight: bold;color:#033941"> Profile Manager</label>
+      </ion-col>
+
+    </ion-row> -->
+
+    <ion-row wrap style="margin-top: 40px">
+    
+      <ion-col width-50 (click)="profile()">
+        <img src="assets/imgs/male.png" height="70" width="70" />
+      </ion-col>
+
+
+      <ion-col width-50 (click)="exit()">
+        <img src="assets/imgs/off.png" height="60" width="60" />
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row wrap>
+      <ion-col width-50>
+        <label style="font-size: 13px; font-family: arial; font-weight: bold;color:#033941"> Profile</label>
+      </ion-col>
+
+      <ion-col width-50>
+        <label style="font-size: 13px; font-family: arial; font-weight: bold;color:#033941"> Exit </label>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row style="margin-top: 40px">
+      <ion-col width-50 (click)="logout()" >
+        <img src="assets/imgs/help.png" height="60" width="60" />
+      </ion-col>
+     
+    </ion-row>
+
+
+    <ion-row>
+        <ion-col width-50>
+            <label style="font-size: 13px; font-family: arial; font-weight: bold;color:#033941" (click)="gototabs()"> Logout </label>
+          </ion-col>
+    
+         
+    </ion-row>
+
+
+   
+  </ion-grid>
+</ion-content>

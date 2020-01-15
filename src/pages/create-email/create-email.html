@@ -1,0 +1,108 @@
+<!--
+  Generated template for the CreateEmail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar background-color="#057989" hideBackButton="false" scroll="false">
+    <ion-buttons left>
+      <img height="35" src="assets/imgs/police_logo.png" />
+    </ion-buttons>
+    <ion-title style="text-align: center">
+      <label text-center style="font-size: 16px; font-family: arial; text-align: center;font-weight: bold"> Maharashtra State Police  Housing Corporation </label>
+    </ion-title>
+    <ion-buttons right>
+      <img height="35" src="assets/imgs/mrsac_logo.png" />
+    </ion-buttons>
+
+  </ion-navbar >
+  <ion-navbar  hideBackButton="true" scroll="false" style="margin-top: 0.5px  ;text-align:left" class="toolbar-title">
+     
+      <ion-title style="text-align:left" class="ion-title">
+        <label  style="font-size: 14px; font-family: arial; text-align:left;font-weight: bold">Registration</label>
+      </ion-title>
+     
+  
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="login-content" >
+
+
+      <ion-item>
+        <ion-label style="color: black"> Select Project Management Consultant Name  </ion-label>
+
+           <ion-select   [(ngModel)]="pmc"  name="pmc"   (ionChange)="getBranchData()" >
+            <ion-option    *ngFor="let s of branches"    >{{s.project_management_consultant}}</ion-option>
+             </ion-select>
+      </ion-item>
+
+      
+        
+      <ion-item>
+        <ion-label style="color: black">Contractor Name</ion-label>
+        <ion-select   [(ngModel)]="rank"  name="rank" (ionChange)="optionsrank()">
+            <ion-option *ngFor="let s of CityRanges"  value="{{s.contractor}}">{{s.contractor }}</ion-option>
+          </ion-select>
+      </ion-item>
+
+      
+
+      <ion-item>
+        <ion-label style="color: black"> Select Region</ion-label>
+
+           <ion-select   [(ngModel)]="regionnmae"  name="regionnmae"  (ionChange)="selectsregion()"   >
+            <ion-option    *ngFor="let s of regionData"    >{{s.resion}}</ion-option>
+             </ion-select>
+      </ion-item>
+
+        
+  
+  <div class="login-box">
+<form [formGroup]="createForm2"  novalidate>
+
+
+  
+
+    <ion-item>
+      <!-- <ion-label floating>Office Name</ion-label> -->
+      
+      <ion-input type="text"  placeholder="Full Name" [formControl]="createForm2.controls['officename']" [ngClass]="{'error-border':!createForm2.controls['officename'].valid}"  name="officename" [(ngModel)]="data.office" minlength="1"></ion-input>
+      <ion-icon name="briefcase" item-right ></ion-icon>
+    </ion-item>
+
+   
+
+   
+
+    <ion-item>
+        <ion-input type="text" formControlName="mailId"  placeholder="you@example.com" name="mailId" [(ngModel)]="mailId" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" required></ion-input>
+        <ion-icon name="mail" item-right ></ion-icon>
+      </ion-item>
+              <p [hidden]="createForm2.controls.mailId.valid || createForm2.controls.mailId.pristine " class="error-box" padding-left>please enter valid email Id</p>
+
+              <ion-item>
+                
+                  <ion-input type="password" placeholder="Password" [formControl]="createForm2.controls['password']" [ngClass]="{'error-border':!createForm2.controls['password'].valid}" name="password" [(ngModel)]="data.password" minlength="6"></ion-input>
+                  <ion-icon name="eye" item-right ></ion-icon>
+                </ion-item>
+                <p [hidden]="createForm2.controls.password.valid || createForm2.controls.password.pristine " class="error-box" padding-left>please enter valid length password</p>
+<ion-item>
+<ion-input type="tel"  [formControl]="createForm2.controls['contact']"  placeholder=" +91  Phone number" [ngClass]="{'error-border':!createForm2.controls['contact'].valid}"  name="contact" [(ngModel)]="data.contact" maxlength="10" ></ion-input>
+<ion-icon name="phone-portrait" item-right ></ion-icon>
+</ion-item>
+
+
+<button  ion-button block  style="background: #057989 ;text-transform: none" [disabled]="!createForm2.controls.mailId.valid || !createForm2.controls['contact'].valid
+||!createForm2.controls['officename'].valid   " (click)="registrtion()" >
+        Sign Up</button>
+
+      
+      
+</form>
+</div>
+
+
+</ion-content>

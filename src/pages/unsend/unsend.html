@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar hideBackButton="false">
+   </ion-navbar>
+ </ion-header>
+ 
+ <ion-content padding>
+   
+     
+   <ion-item>
+       <ion-label>Select file to send</ion-label>
+       <ion-select [(ngModel)]="mapping" (cancel)="onCancel()" (ionChange)="optionsFn()">
+           <ion-option *ngFor="let x of itemss ; let i = index;"  [value]="{name:x.name,id:i,pid:x.pid}"> {{x.name}}</ion-option> 
+           </ion-select>
+         </ion-item>
+ 
+     <ion-list>
+       <div text-center style="margin-top:6%">
+            <img src="{{this.mappingdata}}"  >
+        </div> 
+ 
+        <div text-center style="margin-top:6%"> 
+         <img src="{{this.mappingdata1}}">    
+      </div> 
+ 
+      <div text-center style="margin-top:6%">
+       <img src="{{this.mappingdata2}}">
+    </div> 
+ 
+         <div class="wrapper" style="margin-top: 2%" >
+           <button ion-button   ion-center   style="text-transform: none;background: #057989;display: none" (click)="gotoDetails()">View Details</button>
+           <button ion-button   ion-center  style="text-transform: none;background: #057989" (click)="SendImage()">Send</button>
+           <!-- <button ion-button   ion-center  (click)="uploadtxtfile()">Send txt</button> -->
+        </div>
+        </ion-list>
+        
+        <ion-item no-lines color="#fff">
+           
+             </ion-item>
+      
+ </ion-content>
+ 
+ 
+      
+ 
+     
+       
+ 
+ 
+       
+ 
+      
+           
+       
+      
+       
+    
+          
+       
+    
+   
+  
+ 
+  
+ 
+ 

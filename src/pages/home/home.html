@@ -1,0 +1,210 @@
+<ion-header>
+  <ion-navbar background-color="#057989" hideBackButton="true" scroll="false">
+    <ion-buttons left>
+      <img height="35" src="assets/imgs/police_logo.png" />
+    </ion-buttons>
+    <ion-title >
+      <label text-center style="font-size: 16px; font-family: arial; text-align: center;font-weight: bold"> Maharashtra State Police  Housing Corporation </label>
+    </ion-title>
+    <ion-buttons right>
+      <img height="35" src="assets/imgs/mrsac_logo.png" />
+    </ion-buttons>
+</ion-navbar >
+  </ion-header>
+<ion-content  class=bg-style>
+  <ion-card style="border:solid 1px #057989">
+    <ion-row style="background-color: #057989; color:#FFF;margin: 5px;font-weight: bold">
+      <ion-col style="text-align:left" > Officer Details </ion-col>
+      </ion-row>
+      
+    <ion-card-content margin-top=20px>
+      <div class="modal" ion-item text-wrap *ngFor="let item of user_data" style="background: #eee;border: 1px solid #888">
+
+          <div class="item item-text-wrap" style="font-size:100%; margin-bottom:5px;padding: 2%">
+              <strong> Officer Name      : </strong>  {{ item.official_name }}
+           </div>
+           <div class="item item-text-wrap" style="font-size:100%; margin-bottom:5px;padding: 2%">
+                <strong> PMC Name      : </strong>  {{ item.pmc }}
+             </div>
+
+             <div class="item item-text-wrap" style="font-size:100%; margin-bottom:5px;padding: 2%">
+              <strong> Contractor Name      : </strong>  {{ item.contractor }}
+           </div>
+
+           <div class="item item-text-wrap" style="font-size:100%; margin-bottom:5px;padding: 2%">
+            <strong> Mobile no      : </strong>  {{ item.mob_no }}
+         </div>
+           </div>
+           </ion-card-content>
+           </ion-card>
+<ion-card>
+  <ion-row style="background-color: #057989; color:#FFF;margin: 5px;font-weight: bold">
+    <ion-col style="text-align:left" > Mapping </ion-col>
+    </ion-row>
+
+     <!-- <ion-item>
+        <ion-label style="color: rgb(131, 129, 129);text-align: start;font-size: 13px">Department</ion-label>
+        <ion-label style="color: black;text-align: end;">{{this.branch}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+          <ion-label style="color: rgb(131, 129, 129);text-align: start;font-size: 13px">{{this.officesname}} </ion-label>
+          <ion-label style="color: black;text-align: end">{{this.office_name}} </ion-label>
+      </ion-item>
+
+      <ion-item  *ngIf="showThiss">
+          <ion-label style="color: rgb(131, 129, 129);text-align: start;font-size: 13px">Office</ion-label>
+          <ion-label style="color: black;text-align: end">{{this.range_office_name}}</ion-label>
+        </ion-item> -->
+
+   
+        <ion-item>
+          <ion-label style="color: rgb(131, 129, 129);text-align: start;font-size: 13px">Select Ongoing Project </ion-label>
+          <ion-select [(ngModel)]="schme" style="font-size: 17px" (ionChange)="optionsFnScheme()">
+              <ion-option *ngFor="let s of projectList"  [value]="{id:s.pid,district:s.district,project_name:s.project_name}">{{s.project_name }}</ion-option> 
+          </ion-select>
+        </ion-item>
+
+        <!-- <ion-item>
+          <ion-label style="color: rgb(131, 129, 129);text-align: start;font-size: 13px">Select Wing </ion-label>
+          <ion-select [(ngModel)]="selectedwings" style="font-size: 17px" (ionChange)="optionsFnWing()">
+              <ion-option *ngFor="let s of Wings"  [value]="{id:s.id,block_code:s.block_code}">{{s.block_name }}</ion-option> 
+          </ion-select>
+        </ion-item> -->
+
+        <!-- <ion-item>
+          <ion-label style="color: rgb(131, 129, 129);text-align: start;font-size: 13px">Select Work type </ion-label>
+          <ion-select [(ngModel)]="selecetdworkyype" style="font-size: 17px" (ionChange)="optionsFnWorktype()">
+              <ion-option *ngFor="let s of Work_Type"  [value]="{id:s.id,work_code:s.work_code}">{{s.work_type }}</ion-option> 
+          </ion-select>
+        </ion-item> -->
+
+        <ion-item>
+          <ion-label style="color: rgb(131, 129, 129);text-align: start;font-size: 13px">Select Current Work Status</ion-label>
+          <ion-select   [(ngModel)]="status"  name="status"   (ionChange)="optionsFnStatus()"  >
+              <ion-option value="Admin">Administrator Building</ion-option>
+              <ion-option value="Residential">Residential Building</ion-option>
+         </ion-select>
+          </ion-item> 
+           <!-- <ion-item>
+              <ion-label stacked color="primary"> Select Date of Approval</ion-label>
+              <ion-input type="date" displayFormat="DD-MM-YYYY"  [(ngModel)]="doa"  placeholder="Select Date" value={{date}} required="required"></ion-input>
+            </ion-item>
+    
+          <ion-item>
+            <ion-label stacked color="primary"> Select Date of Initiation</ion-label>
+            <ion-input type="date"  displayFormat="DD-MM-YYYY" [(ngModel)]="doi" placeholder="Select Date" value={{date}}  required="required"></ion-input>
+          </ion-item>
+    
+        <ion-item *ngIf="showThis">
+          <ion-label stacked color="primary"> Select Date of Completion</ion-label>
+          <ion-input type="date"  [(ngModel)]="doc" placeholder="Enter Date" value={{date}} required="required"></ion-input>
+        </ion-item>  -->
+
+                  <!-- <ion-item>
+                    <ion-label  style="color: rgb(131, 129, 129);text-align: start;font-size: 13px">Percentage of  Work Completion</ion-label>
+                    <ion-select [(ngModel)]="per" (ionChange)="optionsFnPercentage()">
+                        <ion-option value="25%">25%</ion-option>
+                        <ion-option value="50%">50%</ion-option>
+                        <ion-option value="75%">75%</ion-option>
+                        <ion-option value="100%">100%</ion-option>
+                     </ion-select>
+                  </ion-item> -->
+                </ion-card>
+             
+        <ion-card > 
+                <ion-grid>
+                        <ion-row style="background-color: #057989; color:#FFF;font-weight: bold;margin: 3px">
+                                <button  color="secondary" ion-button block    style="margin: 5px;text-transform: none"   (click)="refresh_location()" >Refresh Location</button>
+                        </ion-row>
+                  </ion-grid>   
+                  
+                  <table  style="margin-top:1%" >
+                    <tr>
+                      <td>Latitude</td>
+                      <td> {{ this.locationTracker.lat.toFixed(4) }} </td>
+                    </tr>
+                    <tr>
+                      <td>Longitude</td>
+                      <td>{{ locationTracker.lng.toFixed(4) }} </td>
+                    </tr>
+                    <tr>
+                      <td>Accuracy</td>
+                      <td> {{locationTracker.acc.toFixed(4) }} </td>
+                    </tr>
+                    <tr>
+                      <td>Date of Mapping</td>
+                      <td> {{  currentDate }} </td>
+                    </tr>
+                  </table>
+          </ion-card>
+                  <ion-card>
+                      <ion-grid >
+                          <ion-row style="background-color: #057989; color:#FFF;margin: 5px;font-weight: bold">
+                                 <ion-col style="text-align:left"> Capture Photo </ion-col>
+                               </ion-row>
+                               <label text-center style="font-size: 12px;  text-align: center;font-weight: bold"> Click on Camera button to take photo</label>
+                               </ion-grid>
+
+
+                               <ion-row style="background: #FFF">
+                                  <ion-col col-md-6 >
+                                      <ion-card class="block" *ngFor="let item of ditems">
+                                          <img   src="{{this.var_picture}}"   
+                                          text="{{'Mapping-Date :   ' + this.currentDate + '       LAT: ' + this.locationTracker.lat.toFixed(2)  + '   LON: '+ this.locationTracker.lng.toFixed(2) +'    DEVICE_ID : ' + item.value}}"  texts="{{  item.value +'_'+this.timestamp + '      '+' Official Name :   '+this.username+'  '+' PID :'+this.pid+' '+'  SSS-MSPHC'}}"    image-draw-text  crossOrigin  style="background-repeat:no-repeat; background-position:center center;" >
+                                          
+                                        <button ion-button  style="text-transform: none;background: #057989;" ion-center (click)="captureimage()">
+                                              <div style="text-align: center">
+                                                  <ion-icon name="camera"></ion-icon>
+                                                  <label   style="font-size: 16px;text-transform: none;background: #057989;">   Capture Photo </label>
+                                              </div>
+                                            </button>
+                                        </ion-card>
+                                  </ion-col>
+                                  <ion-col col-md-6>
+                                      <ion-card class="block" *ngFor="let item of ditems">
+                                          <img   src="{{this.var_picture1}}"   
+                                          text="{{'Mapping-Date :   ' + this.currentDate + '         LAT: ' + this.locationTracker.lat.toFixed(2)  + '   LON: '+ this.locationTracker.lng.toFixed(2) +'    DEVICE_ID : ' + item.value}}"  texts="{{  item.value +'_'+this.timestamp + '      '+' Official Name :  '+this.username+'  '+' PID :'+this.pid+' '+'  SSS-MSPHC'}}"    image-draw-text-directive2  crossOrigin  style="background-repeat:no-repeat; background-position:center center;" >
+                                          <button ion-button  style="text-transform: none;background: #057989;" ion-center (click)="captureimage1()">
+                                              <div>
+                                                  <ion-icon name="camera"></ion-icon>
+                                                  <label   style="font-size: 16px;text-transform: none;background: #057989;">   Capture Photo2 </label>
+                                              </div>
+                                            </button>
+                                        
+                                        </ion-card>
+                                  </ion-col>
+                                  
+                                </ion-row>
+
+
+                                <ion-row style="background: #FFF ; display: flex;justify-content: center;">
+                                    <ion-col col-md-6>
+                                        <ion-card class="block" *ngFor="let item of ditems">
+                                            <img   src="{{this.var_picture2}}"   
+                                            text="{{'Mapping-Date :   ' + this.currentDate + '        LAT: ' + this.locationTracker.lat.toFixed(2)  + '   LON: '+ this.locationTracker.lng.toFixed(2) +'    DEVICE_ID : ' + item.value}}"  texts="{{  item.value +'_'+this.timestamp + '      '+' Official Name :   '+this.username+'  '+' PID :'+this.pid+' '+'  SSS-MSPHC'}}"    image-draw-text3  crossOrigin  style="background-repeat:no-repeat; background-position:center center;" >
+                                            <button ion-button  style="text-transform: none;background: #057989;" ion-center (click)="captureimage2()">
+                                                <div>
+                                                    <ion-icon name="camera"></ion-icon>
+                                                    <label   style="font-size: 16px;text-transform: none;background: #057989;">   Capture Photo3 </label>
+                                                </div>
+                                              </button>
+                                          
+                                          </ion-card>
+                                    </ion-col>
+                                  </ion-row>
+                                  <div class="wrapper" margin-top=20px>
+                                    <button ion-button color="secondary"  style="text-transform: none;background: #057989;" (click)="checkimagedata()" > Save </button>
+                                      
+                                </div>
+
+                                <div class="login-box" style="padding:3px">
+                                  <!-- value="{{remark}}" -->
+                                  <ion-input type="text"   class="mytext" [(ngModel)]="remark"  placeholder="Remark" ></ion-input>         
+                                </div>
+                    </ion-card>
+                  </ion-content>
+
+
+
+                  
